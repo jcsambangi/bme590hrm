@@ -29,6 +29,6 @@ def mktestfile(tmpdir):
     testPath = testFile.strpath
     with open(testPath, 'w', newline='') as csvfile:
         testWriter = csv.writer(csvfile)
-        testWriter.writerow(['0.11','0.88'])
-        testWriter.writerow(['0.22','0.99'])
+        testWriter.writerow(['0.11', '0.88'])
+        testWriter.writerow(['0.22', '0.99'])
     return testPath

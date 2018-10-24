@@ -27,7 +27,7 @@ def existFile(filename):
         fileHolder = open(filename, "r")
         fileHolder.close()
     except:
-        logging.error("The input file could not be found based on the input filename.")
+        logging.error("The input file could not be found.")
         raise FileNotFoundError("This file could not be found.")
 
 
@@ -35,7 +35,7 @@ def readFile(filename):
     """Creates Python lists of times and voltages from CSV file.
 
     :param filename: name of incoming file exists
-    :returns: list of lists: 0th value = list of times, 1st value = list of voltages
+    :returns: list of lists: 0th = list of times, 1st = list of voltages
     """
     times = []
     voltages = []

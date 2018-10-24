@@ -16,7 +16,7 @@ def test_validate_true(filename):
     """Tests the function validate from reader.py.
 
     :param filename: inpute string with purported file name
-    :returns: test passed if filename ends in '.csv', test failed for filenames not ending in '.csv'
+    :returns: test passed if filename ends in '.csv', failed otherwise
     """
     from reader import validate
     with pytest.raises(TypeError):
@@ -39,4 +39,4 @@ def test_readFile(mktestfile):
     :returns: test passed if read data is as expected, test failed if otherwise
     """
     from reader import readFile
-    assert readFile(mktestfile) == [[0.11,0.22],[0.88,0.99]]
+    assert readFile(mktestfile) == [[0.11, 0.22], [0.88, 0.99]]
