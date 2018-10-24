@@ -1,0 +1,4 @@
+2018-10-23 20:34:40,446 Started.
+2018-10-23 20:34:40,496 Filename: test_data1.csv
+2018-10-23 20:34:40,565 The input file has been read.
+2018-10-23 20:34:40,589 Finished.
