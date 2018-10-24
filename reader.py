@@ -4,6 +4,7 @@
 import csv
 import logging
 import numpy
+import cleaner
 
 
 def validate(filename):
@@ -42,8 +43,8 @@ def readFile(filename):
     with open(filename, 'r') as csvfile:
         csvReader = csv.reader(csvfile)
         for row in csvReader:
-            times.append(float(row[0]))
-            voltages.append(float(row[1]))
+            times.append(cleaner.cleanTime(row[0]))
+            voltages.append(cleaner.cleanVoltage(row[1]))
     logging.info("The input file has been read.")
     values = [times, voltages]
     return values
