@@ -10,7 +10,7 @@ def cleanFloat(something):
     """
     try:
         floatSomething = float(something)
-        if math.isnan(floatSomething) == True:
+        if math.isnan(floatSomething) == True or type(something) == bool:
             raise ValueError
     except ValueError:
         logging.warning("Not a float: " + repr(something))
