@@ -457,3 +457,27 @@
 2018-10-23 23:22:57,161 ECG voltage >300 mv: 331.25
 2018-10-23 23:22:57,162 The input file has been read.
 2018-10-23 23:22:57,162 Finished.
+2018-10-25 00:22:50,543 Started.
+2018-10-25 00:22:50,624 Filename: test_data29.csv
+2018-10-25 00:22:50,721 Not a float: ''
+2018-10-25 00:22:50,721 Not a float: ''
+2018-10-25 00:22:50,735 The input file has been read.
+2018-10-25 00:22:50,736 1.000000 point(s) interpolated.
+2018-10-25 00:22:50,738 1.000000 point(s) interpolated.
+2018-10-25 00:22:50,739 Finished.
+2018-10-25 00:23:52,314 Started.
+2018-10-25 00:23:52,315 Filename: test_data29.csv
+2018-10-25 00:23:52,396 Not a float: ''
+2018-10-25 00:23:52,396 Not a float: ''
+2018-10-25 00:23:52,410 The input file has been read.
+2018-10-25 00:23:52,411 1.000000 point(s) interpolated.
+2018-10-25 00:23:52,414 1.000000 point(s) interpolated.
+2018-10-25 00:23:52,416 Finished.
+2018-10-25 00:24:22,811 Started.
+2018-10-25 00:24:22,812 Filename: test_data30.csv
+2018-10-25 00:24:23,200 Not a float: 'bad data'
+2018-10-25 00:24:23,201 Not a float: 'bad data'
+2018-10-25 00:24:23,540 The input file has been read.
+2018-10-25 00:24:23,541 1.000000 point(s) interpolated.
+2018-10-25 00:24:23,542 1.000000 point(s) interpolated.
+2018-10-25 00:24:23,543 Finished.

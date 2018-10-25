@@ -3,10 +3,10 @@
 
 import logging
 import reader
-import analyzer
+#import analyzer
 import cleaner
 
-filename = "test_data32.csv"
+filename = "test_data30.csv"
 numberOfMinutes = 0.25
 
 

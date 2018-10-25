@@ -2,7 +2,16 @@
 """
 
 import logging
-import numpy
+import numpy as np
+
+
+def produceNumpy(data):
+    """Produces a 2-row numpy array from the raw data
+
+    :param rawData: list of lists time and voltage
+    :returns: numpy array
+    """
+    return np.array(rawData[0], rawData[1])
 
 
 def produceDuration(times):
