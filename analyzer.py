@@ -11,21 +11,16 @@ def produceNumpy(data):
     :param rawData: list of lists time and voltage
     :returns: numpy array
     """
-    return np.array(rawData[0], rawData[1])
+    return np.array([data[0], data[1]])
 
 
-def produceDuration(times):
+def produceDuration(data):
     """Calculates time duration of the ECG strip.
 
-    :param times: list of times as floats
+    :param data: numpy array with data
     :returns: float duration of signal
     """
-    maxTime = -1000
-    for time in times:
-        if time > maxTime: maxTime = time
-    minTime = maxTime
-    for time in times:
-        if time < minTime: 
+    return data[0, :].max()-data[0, :].min() 
 
 
 def produceVoltageExtremes(voltages):
