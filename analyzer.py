@@ -5,13 +5,18 @@ import logging
 import numpy
 
 
-def produceMeanHR(times, voltages, minutes):
-    """Calculates mean heart rate from data.
+def produceDuration(times):
+    """Calculates time duration of the ECG strip.
 
     :param times: list of times as floats
-    :param voltages: list of voltages as floats
-    :returns: integer bpm over specified number of minutes
+    :returns: float duration of signal
     """
+    maxTime = -1000
+    for time in times:
+        if time > maxTime: maxTime = time
+    minTime = maxTime
+    for time in times:
+        if time < minTime: 
 
 
 def produceVoltageExtremes(voltages):
@@ -22,11 +27,12 @@ def produceVoltageExtremes(voltages):
     """
 
 
-def produceDuration(times):
-    """Calculates time duration of the ECG strip.
+def produceTimesOfBeats(times, voltages):
+    """Calculates timepoints at which beats occurred.
 
     :param times: list of times as floats
-    :returns: float duration of signal
+    :param voltages: list of voltages as floats
+    :returns: numpy array of times at which beats occurred
     """
 
 
@@ -39,10 +45,10 @@ def produceNumberOfBeats(times, voltages):
     """
 
 
-def produceTimesOfBeats(times, voltages):
-    """Calculates timepoints at which beats occurred.
+def produceMeanHR(times, voltages, minutes):
+    """Calculates mean heart rate from data.
 
     :param times: list of times as floats
     :param voltages: list of voltages as floats
-    :returns: numpy array of times at which beats occurred
+    :returns: integer bpm over specified number of minutes
     """

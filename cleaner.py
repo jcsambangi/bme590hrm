@@ -6,7 +6,7 @@ import math
 
 
 def cleanFloat(something):
-    """Ensures all members of data lists are floats.
+    """Investigates members of data lists for float status.
     """
     try:
         floatSomething = float(something)
@@ -36,3 +36,33 @@ def cleanVoltage(something):
         return "interpolate"
     else:
         return cleanedVoltage
+
+
+def cleanInterpolate(rawData, which):
+    """Replaces 'interpolate' with appropriately interpolated value.
+
+    :param rawData: incoming list of lists of times and voltages
+    :param which: integer designation of which list to clean
+    :returns: list of lists of times and voltages, cleaner than before
+    """
+    modList = rawData[which]
+    otherList = rawData[1-which]
+    ind = modList.index("interpolate")
+    if ind == 0 or ind == (len(modList)-1):
+        modList.pop(ind)
+        otherList.pop(ind)
+        logging.warning("1 data point removed.")
+    else:
+        num = 1
+        indHold = ind
+        while modList[indHold+1] == "interpolate":
+            num += 1
+            indHold += 1
+        logging.warning("%f point(s) interpolated." % num)
+        increment = (modList[ind+num]-modList[ind-1])/(num+1)
+        for i in range(0, num):
+            modList[ind+i] = modList[ind+i-1]+increment
+    newRawData = []
+    newRawData.insert(which, modList)
+    newRawData.insert(1-which, otherList)
+    return newRawData
