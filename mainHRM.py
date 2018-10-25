@@ -3,10 +3,10 @@
 
 import logging
 import reader
-#import analyzer
+import analyzer
 import cleaner
 
-filename = "test_data30.csv"
+filename = "test_data2.csv"
 numberOfMinutes = 0.25
 
 
@@ -25,6 +25,9 @@ def HRM(filename):
     rawData = reader.readFile(filename)
     while "interpolate" in rawData[0]: rawData = cleaner.cleanInterpolate(rawData, 0)
     while "interpolate" in rawData[1]: rawData = cleaner.cleanInterpolate(rawData, 1)
+    data = analyzer.produceNumpy(rawData)
+    numBeats = analyzer.produceBeats(data)
+    logging.info('%f beats' % numBeats)
     logging.info('Finished.')
 
 

@@ -481,3 +481,49 @@
 2018-10-25 00:24:23,541 1.000000 point(s) interpolated.
 2018-10-25 00:24:23,542 1.000000 point(s) interpolated.
 2018-10-25 00:24:23,543 Finished.
+2018-10-25 02:46:24,813 Started.
+2018-10-25 02:46:24,839 Filename: test_data1.csv
+2018-10-25 02:46:24,982 The input file has been read.
+2018-10-25 02:48:31,045 Started.
+2018-10-25 02:48:31,046 Filename: test_data1.csv
+2018-10-25 02:48:31,134 The input file has been read.
+2018-10-25 02:48:31,223 1803.000000 beats
+2018-10-25 02:48:31,223 Finished.
+2018-10-25 02:54:16,627 Started.
+2018-10-25 02:54:16,628 Filename: test_data1.csv
+2018-10-25 02:54:16,707 The input file has been read.
+2018-10-25 02:54:23,592 update_title_pos
+2018-10-25 02:54:23,984 findfont: Matching :family=sans-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=10.0 to DejaVu Sans ('C:\\Users\\jcsam\\AppData\\Local\\conda\\conda\\envs\\global-environment\\lib\\site-packages\\matplotlib\\mpl-data\\fonts\\ttf\\DejaVuSans.ttf') with score of 0.050000.
+2018-10-25 02:58:50,980 update_title_pos
+2018-10-25 03:00:13,565 update_title_pos
+2018-10-25 03:00:13,975 update_title_pos
+2018-10-25 03:00:17,383 update_title_pos
+2018-10-25 03:00:25,650 1803.000000 beats
+2018-10-25 03:00:25,651 Finished.
+2018-10-25 03:04:09,678 Started.
+2018-10-25 03:04:09,679 Filename: test_data1.csv
+2018-10-25 03:04:09,824 The input file has been read.
+2018-10-25 03:04:11,543 update_title_pos
+2018-10-25 03:04:11,647 findfont: Matching :family=sans-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=10.0 to DejaVu Sans ('C:\\Users\\jcsam\\AppData\\Local\\conda\\conda\\envs\\global-environment\\lib\\site-packages\\matplotlib\\mpl-data\\fonts\\ttf\\DejaVuSans.ttf') with score of 0.050000.
+2018-10-25 03:05:00,765 update_title_pos
+2018-10-25 03:05:00,926 update_title_pos
+2018-10-25 03:05:14,311 70.000000 beats
+2018-10-25 03:05:14,311 Finished.
+2018-10-25 03:08:27,757 Started.
+2018-10-25 03:08:27,758 Filename: test_data1.csv
+2018-10-25 03:08:27,837 The input file has been read.
+2018-10-25 03:08:28,220 update_title_pos
+2018-10-25 03:08:28,267 findfont: Matching :family=sans-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=10.0 to DejaVu Sans ('C:\\Users\\jcsam\\AppData\\Local\\conda\\conda\\envs\\global-environment\\lib\\site-packages\\matplotlib\\mpl-data\\fonts\\ttf\\DejaVuSans.ttf') with score of 0.050000.
+2018-10-25 03:12:02,429 update_title_pos
+2018-10-25 03:12:02,594 update_title_pos
+2018-10-25 03:12:06,520 update_title_pos
+2018-10-25 03:12:08,230 34.000000 beats
+2018-10-25 03:12:08,230 Finished.
+2018-10-25 03:13:37,105 Started.
+2018-10-25 03:13:37,105 Filename: test_data2.csv
+2018-10-25 03:13:37,106 The input file could not be found.
+2018-10-25 03:14:30,677 Started.
+2018-10-25 03:14:30,678 Filename: test_data2.csv
+2018-10-25 03:14:30,796 The input file has been read.
+2018-10-25 03:14:30,800 32.000000 beats
+2018-10-25 03:14:30,801 Finished.
