@@ -23,12 +23,13 @@ def produceDuration(data):
     return data[0, :].max()-data[0, :].min() 
 
 
-def produceVoltageExtremes(voltages):
+def produceVoltageExtremes(data):
     """Calculates minimum and maximum lead voltages.
 
-    :param voltages: list of voltages as floats
+    :param data: numpy array with data
     :returns: tuple of floats: minimum and maximum voltages
     """
+    return (data[1, :].min(), data[1, :].max())
 
 
 def produceTimesOfBeats(times, voltages):

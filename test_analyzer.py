@@ -36,3 +36,13 @@ def test_produceDuration(testNumpy):
     """
     from analyzer import produceDuration
     assert produceDuration(testNumpy) == 2
+
+
+def test_produceVoltageExtremes(testNumpy):
+    """Tests produceVoltageExtremes from analyzer.py
+
+    :param testNumpy: numpy array fixture
+    :returns: passes if tuple is as expected, fails otherwise
+    """
+    from analyzer import produceVoltageExtremes
+    assert produceVoltageExtremes(testNumpy) == (40, 100)
