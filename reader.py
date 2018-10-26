@@ -4,6 +4,8 @@
 import csv
 import logging
 import numpy
+import cleaner
+import sys
 
 
 def validate(filename):
@@ -13,7 +15,7 @@ def validate(filename):
     :returns: nothing if filename ends in .csv; raises TypeError otherwise
     """
     if not filename.lower().endswith(".csv"):
-        logging.error("The input file did not have extension '.csv'")
+        logging.error("The input file did not have extension '.csv'\n")
         raise TypeError("The input file must have extension '.csv'.")
 
 
@@ -26,8 +28,8 @@ def existFile(filename):
     try:
         fileHolder = open(filename, "r")
         fileHolder.close()
-    except:
-        logging.error("The input file could not be found.")
+    except FileNotFoundError:
+        logging.error("The input file could not be found.\n")
         raise FileNotFoundError("This file could not be found.")
 
 
@@ -42,8 +44,8 @@ def readFile(filename):
     with open(filename, 'r') as csvfile:
         csvReader = csv.reader(csvfile)
         for row in csvReader:
-            times.append(float(row[0]))
-            voltages.append(float(row[1]))
+            times.append(cleaner.cleanTime(row[0]))
+            voltages.append(cleaner.cleanVoltage(row[1]))
     logging.info("The input file has been read.")
     values = [times, voltages]
     return values
