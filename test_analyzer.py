@@ -84,7 +84,7 @@ def test_produceTimesOfBeats(testData):
     from analyzer import produceBeats
     from analyzer import produceTimesOfBeats
     pTOB = produceTimesOfBeats(testData, produceBeats(testData))
-    expected == np.array([3.5, 7.5])
+    expected = np.array([3.5, 7.5])
     check = np.array_equal(pTOB, expected)
     assert check is True
 
