@@ -1,5 +1,5 @@
 # bme590hrm
-BME 590.06: Heart Rate Monitor Assignment
+BME 590.06: Heart Rate Monitor Assignment  
 v1.0.0 released 10/26/18 by Jaydeep Sambangi (GitHub: jcsambangi, NetID: js593)
 
 ## Overview
