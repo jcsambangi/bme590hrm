@@ -7,9 +7,10 @@ import reader
 import analyzer
 import cleaner
 import numpy as np
+import outputter
 
-filename = "test_data1.csv"
-numberOfMinutes = 0.25
+filename = "test_data3.csv"
+numberOfMinutes = None
 
 
 def HRM(filename, numberOfMinutes):
@@ -24,7 +25,6 @@ def HRM(filename, numberOfMinutes):
                         format=FORMAT, datefmt=DATEFMT)
     logging.info('Started.')
     reader.validate(filename)
-    logging.info('Input file name: {}'.format(filename))
     reader.existFile(filename)
     rawData = reader.readFile(filename)
     while "interpolate" in rawData[0]:
@@ -33,22 +33,10 @@ def HRM(filename, numberOfMinutes):
         rawData = cleaner.cleanInterpolate(rawData, 1)
     almostData = analyzer.produceNumpy(rawData)
     data = cleaner.cleanClipper(almostData, numberOfMinutes)
-    duration = analyzer.produceDuration(data)
-    logging.info('Duration (s): {}'.format(duration))
-    voltageExtremes = analyzer.produceVoltageExtremes(data)
-    logging.info('Voltage Extremes (mv): {}'.format(voltageExtremes))
-    beatInds = analyzer.produceBeats(data)
-    numBeats = analyzer.produceNumBeats(beatInds)
-    logging.info('Number of Beats: {}'.format(numBeats))
-    timesOfBeats = analyzer.produceTimesOfBeats(data, beatInds)
-    logging.info('Times of Beats (s): {}'.format(timesOfBeats))
-    meanHR = analyzer.produceMeanHR(numBeats, duration)
-    logging.info('Mean Heart Rate (bpm): {}'.format(meanHR))
+    metrics = outputter.createDictionary(data)
+    JSONname = outputter.createJSON(metrics, filename)
     logging.info('Finished.\n')
 
 
 if __name__ == "__main__":
     HRM(filename, numberOfMinutes)
-#    for i in range(1, 33):
-#        filename = 'test_data{}.csv'.format(i)
-#        HRM(filename, numberOfMinutes)

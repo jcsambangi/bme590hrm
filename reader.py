@@ -31,6 +31,7 @@ def existFile(filename):
     except FileNotFoundError:
         logging.error("The input file could not be found.\n")
         raise FileNotFoundError("This file could not be found.")
+    logging.info('Input file name: {}'.format(filename))
 
 
 def readFile(filename):
