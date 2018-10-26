@@ -7,6 +7,7 @@ import reader
 import analyzer
 import cleaner
 import numpy as np
+import outputter
 
 filename = "test_data1.csv"
 numberOfMinutes = 0.25
@@ -44,6 +45,9 @@ def HRM(filename, numberOfMinutes):
     logging.info('Times of Beats (s): {}'.format(timesOfBeats))
     meanHR = analyzer.produceMeanHR(numBeats, duration)
     logging.info('Mean Heart Rate (bpm): {}'.format(meanHR))
+    dictVals = [meanHR, voltageExtremes, duration, numBeats, timesOfBeats]
+    metrics = outputter.createDictionary(dictVals)
+    logging.info('Metrics dictionary: {}'.format(metrics))
     logging.info('Finished.\n')
 
 
