@@ -1,0 +1,231 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>test_analyzer module &#8212; Heart Rate Monitor  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-test_analyzer">
+<span id="test-analyzer-module"></span><h1>test_analyzer module<a class="headerlink" href="#module-test_analyzer" title="Permalink to this headline">¶</a></h1>
+<p>Unit tests for analyzer.py.</p>
+<dl class="function">
+<dt id="test_analyzer.testNumpy">
+<code class="descclassname">test_analyzer.</code><code class="descname">testNumpy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test_analyzer.testNumpy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates numpy array as fixture.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">numpy array for testing</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="test_analyzer.test_produceBeats">
+<code class="descclassname">test_analyzer.</code><code class="descname">test_produceBeats</code><span class="sig-paren">(</span><em>testData</em><span class="sig-paren">)</span><a class="headerlink" href="#test_analyzer.test_produceBeats" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests produceBeats from analyzer.py</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>testData</strong> – numpy array fixture</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">passes if beats are found</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="test_analyzer.test_produceDuration">
+<code class="descclassname">test_analyzer.</code><code class="descname">test_produceDuration</code><span class="sig-paren">(</span><em>testNumpy</em><span class="sig-paren">)</span><a class="headerlink" href="#test_analyzer.test_produceDuration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests produceDuration function from analyzer.py</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>testNumpy</strong> – numpy array fixture</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">passes if duration is calculated as expected, fails otherwise</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="test_analyzer.test_produceMeanHR">
+<code class="descclassname">test_analyzer.</code><code class="descname">test_produceMeanHR</code><span class="sig-paren">(</span><em>testData</em><span class="sig-paren">)</span><a class="headerlink" href="#test_analyzer.test_produceMeanHR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests produceMeanHR from analyzer.py</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>testData</strong> – numpy array fixture</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">passes if mean heartrate in bpm is correct</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="test_analyzer.test_produceNumBeats">
+<code class="descclassname">test_analyzer.</code><code class="descname">test_produceNumBeats</code><span class="sig-paren">(</span><em>testData</em><span class="sig-paren">)</span><a class="headerlink" href="#test_analyzer.test_produceNumBeats" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests produceNumBeats from analyzer.py</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>testData</strong> – numpy array fixture</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">passes if number of beats are correct</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="test_analyzer.test_produceNumpy">
+<code class="descclassname">test_analyzer.</code><code class="descname">test_produceNumpy</code><span class="sig-paren">(</span><em>testNumpy</em><span class="sig-paren">)</span><a class="headerlink" href="#test_analyzer.test_produceNumpy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests produceNumpy function from analyzer.py</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>testNumpy</strong> – numpy array fixture</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">passes if array was produced as expected, fails otherwise</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="test_analyzer.test_produceTimesOfBeats">
+<code class="descclassname">test_analyzer.</code><code class="descname">test_produceTimesOfBeats</code><span class="sig-paren">(</span><em>testData</em><span class="sig-paren">)</span><a class="headerlink" href="#test_analyzer.test_produceTimesOfBeats" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests produceTimesOfBeats from analyzer.py</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>testData</strong> – numpy array fixture</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">passes if times of beats are correct</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="test_analyzer.test_produceVoltageExtremes">
+<code class="descclassname">test_analyzer.</code><code class="descname">test_produceVoltageExtremes</code><span class="sig-paren">(</span><em>testNumpy</em><span class="sig-paren">)</span><a class="headerlink" href="#test_analyzer.test_produceVoltageExtremes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests produceVoltageExtremes from analyzer.py</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>testNumpy</strong> – numpy array fixture</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">passes if tuple is as expected, fails otherwise</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Heart Rate Monitor</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Jaydeep Sambangi.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/test_analyzer.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
