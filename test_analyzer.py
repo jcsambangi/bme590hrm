@@ -83,8 +83,9 @@ def test_produceTimesOfBeats(testData):
     """
     from analyzer import produceBeats
     from analyzer import produceTimesOfBeats
-    check = np.array_equal(produceTimesOfBeats(testData,
-                                produceBeats(testData)), np.array([3.5, 7.5]))
+    pTOB = produceTimesOfBeats(testData, produceBeats(testData))
+    expected == np.array([3.5, 7.5])
+    check = np.array_equal(pTOB, expected)
     assert check is True
 
 
@@ -98,5 +99,6 @@ def test_produceMeanHR(testData):
     from analyzer import produceNumBeats
     from analyzer import produceDuration
     from analyzer import produceMeanHR
-    assert produceMeanHR(produceNumBeats(produceBeats(testData)),
-                            produceDuration(testData)) == 12
+    numBeats = produceNumBeats(produceBeats(testData))
+    duration = produceDuration(testData)
+    assert produceMeanHR(numBeats, duration) == 12
