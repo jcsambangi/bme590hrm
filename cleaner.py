@@ -80,10 +80,11 @@ def cleanClipper(data, endTime):
     :returns: numpy array of appropriately windowed data
     """
     times = data[0, :]
+    if endTime is None: return data
     try:
         endTime = float(endTime)
-        if (math.isnan(endTime) is True or type(endTime) == bool or 
-            endTime == None or endTime == 0 or endTime > np.amax(times)):
+        if (math.isnan(endTime) is True or type(endTime) == bool or
+                endTime == 0 or endTime > np.amax(times)):
             logging.info("User entered inappropriate time: "+repr(endTime))
             raise ValueError
     except (TypeError, ValueError):
