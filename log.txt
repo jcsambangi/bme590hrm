@@ -1,52 +1,15 @@
-2018-10-25 23:03:45 Started.
-2018-10-25 23:03:45 Input file name: test_data1.csv
-2018-10-25 23:03:45 The input file has been read.
-2018-10-25 23:03:45 Duration (s): 27.775
-2018-10-25 23:03:45 Voltage Extremes (mv): (-0.68, 1.05)
-2018-10-25 23:03:45 Number of Beats: 34
-2018-10-25 23:03:45 Times of Beats (s): [ 0.214  1.028  1.842  2.631  3.419  4.208  5.025  5.681  6.675  7.517
-  8.328  9.119  9.889 10.731 11.586 12.406 13.236 14.058 14.853 15.65
- 16.439 17.264 18.131 18.956 19.739 20.536 21.306 22.092 22.906 23.719
- 24.547 25.394 26.2   26.972]
-2018-10-25 23:03:45 Mean Heart Rate (bpm): 73.0
-2018-10-25 23:03:45 Finished.
-
-2018-10-25 23:04:10 Started.
-2018-10-25 23:04:10 The input file did not have extension '.csv'
-
-2018-10-25 23:04:39 Started.
-2018-10-25 23:04:39 The input file did not have extension '.csv'
-
-2018-10-25 23:05:09 Started.
-2018-10-25 23:05:09 Input file name: test_data100.csv
-2018-10-25 23:05:09 The input file could not be found.
-
-2018-10-25 23:07:00 Started.
-2018-10-25 23:07:00 Input file name: test_data100.csv
-2018-10-25 23:07:00 The input file could not be found.
-
-2018-10-25 23:10:29 Started.
-2018-10-25 23:10:29 Input file name: test_data100.csv
-2018-10-25 23:10:29 The input file could not be found.
-
-2018-10-25 23:12:54 Started.
-2018-10-25 23:12:54 Input file name: test_data100.csv
-2018-10-25 23:12:54 The input file could not be found.
-
-2018-10-25 23:13:12 Started.
-2018-10-25 23:13:12 The input file did not have extension '.csv'
-
-2018-10-25 23:13:41 Started.
-2018-10-25 23:13:41 The input file did not have extension '.csv'
-
-2018-10-25 23:14:00 Started.
-2018-10-25 23:14:00 Input file name: test_data1.csv
-2018-10-25 23:14:00 The input file has been read.
-2018-10-25 23:14:00 Duration (s): 15.0
-2018-10-25 23:14:00 Voltage Extremes (mv): (-0.645, 0.96)
-2018-10-25 23:14:00 Number of Beats: 19
-2018-10-25 23:14:00 Times of Beats (s): [ 0.214  1.028  1.842  2.631  3.419  4.208  5.025  5.681  6.675  7.517
-  8.328  9.119  9.889 10.731 11.586 12.406 13.236 14.058 14.853]
-2018-10-25 23:14:00 Mean Heart Rate (bpm): 76.0
-2018-10-25 23:14:00 Finished.
+2018-10-26 05:23:57 Started.
+2018-10-26 05:23:57 Input file name: test_data3.csv
+2018-10-26 05:23:57 The input file has been read.
+2018-10-26 05:23:57 Duration (s): 27.775
+2018-10-26 05:23:57 Voltage Extremes (mv): (-0.735, 0.955)
+2018-10-26 05:23:57 Number of Beats: 34
+2018-10-26 05:23:57 Times of Beats (s): [ 0.319  1.136  1.933  2.744  3.622  4.481  5.306  6.114  6.911  7.725
+  8.533  9.367 10.253 11.103 11.911 12.717 13.514 14.344 15.181 16.019
+ 16.897 17.722 18.511 19.306 20.114 20.967 21.822 22.664 23.533 24.342
+ 25.117 25.922 26.75  27.608]
+2018-10-26 05:23:57 Mean Heart Rate (bpm): 73.0
+2018-10-26 05:23:57 Metrics dictionary created.
+2018-10-26 05:23:57 Wrote JSON file: test_data3.json
+2018-10-26 05:23:57 Finished.
 
