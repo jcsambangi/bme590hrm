@@ -25,10 +25,10 @@ def createDictionary(data):
     meanHR = analyzer.produceMeanHR(numBeats, duration)
     logging.info('Mean Heart Rate (bpm): {}'.format(meanHR))
     metrics = {"mean_hr_bpm": meanHR,
-                "voltage_extremes": voltageExtremes,
-                "duration": duration,
-                "num_beats": numBeats,
-                "beats": timesOfBeats}
+               "voltage_extremes": voltageExtremes,
+               "duration": duration,
+               "num_beats": numBeats,
+               "beats": timesOfBeats}
     logging.info("Metrics dictionary created.")
     return metrics
 
