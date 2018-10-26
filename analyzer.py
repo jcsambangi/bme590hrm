@@ -4,7 +4,6 @@
 import logging
 import numpy as np
 from scipy.signal import find_peaks
-#import matplotlib.pyplot as plt
 
 
 def produceNumpy(data):
@@ -34,38 +33,52 @@ def produceVoltageExtremes(data):
     return (data[1, :].min(), data[1, :].max())
 
 
-def produceTimesOfBeats(times, voltages):
-    """Calculates timepoints at which beats occurred.
-
-    :param times: list of times as floats
-    :param voltages: list of voltages as floats
-    :returns: numpy array of times at which beats occurred
-    """
-    return 0
-
-
 def produceBeats(data):
     """Finds the beats in the ECG strip.
 
     :param data: numpy array with data
-    :returns:
+    :returns: numpy array with indices of peaks
     """
-    spacing = produceDuration(data)/len(data[0, :])
+    length = data[0, :].size
+    if length == 0:
+        return np.array([])
+    else:
+        spacing = produceDuration(data)/length
     maxHR = 200/60
-    wait = round((1/maxHR)/spacing)
+    wait = round((1/maxHR)/spacing)+1
     voltages = data[1, :]
-    peaks, _ = find_peaks(voltages, distance=wait, prominence=0.6)
-#    plt.plot(voltages)
-#    plt.plot(peaks, voltages[peaks], "x")
-#    plt.show()
-    return len(peaks)
+    peaksInds, _ = find_peaks(voltages, distance=wait, prominence=0.6)
+    return peaksInds
 
 
-def produceMeanHR(times, voltages, minutes):
+def produceNumBeats(peakInds):
+    """Counts the number of beats in the ECG strip.
+
+    :param peakInds: numpy array with indices of peaks
+    :returns: integer number of beats in ECG strip
+    """
+    return len(peakInds)
+
+
+def produceTimesOfBeats(data, peakInds):
+    """Calculates timepoints at which beats occurred.
+
+    :param data: numpy array with data
+    :param peakInds: nump array with indices of peaks
+    :returns: numpy array of times at which beats occurred
+    """
+    times = data[0, :]
+    return times[peakInds]
+
+
+def produceMeanHR(numBeats, duration):
     """Calculates mean heart rate from data.
 
-    :param times: list of times as floats
-    :param voltages: list of voltages as floats
-    :returns: integer bpm over specified number of minutes
+    :param numBeats: integer number of beats in ECG strip
+    :param duration: float duration of strip
+    :returns: mean heart rate as integer beats per minute
     """
-    return 0
+    if duration == 0:
+        return 0
+    else:
+        return round(numBeats/(duration/60))

@@ -2,6 +2,8 @@
 """
 
 import pytest
+import numpy as np
+import logging
 
 testSomethings = [
         (1, 1, 1, 1),
@@ -55,3 +57,19 @@ def test_cleanInterpolate(rawData, which, expected):
     """
     from cleaner import cleanInterpolate
     assert cleanInterpolate(rawData, which) == expected
+
+
+def test_cleanClipper(testData):
+    """Tests the cleanClipper function from cleaner.py
+
+    :returns: passes if data is windowed as expected, fails otherwise
+    """
+    testTimes = testData[0, 0:7]
+    testVoltages = testData[1, 0:7]
+    expectedClippedData = np.array([testTimes, testVoltages])
+    logging.warning(repr(expectedClippedData))
+    from cleaner import cleanClipper
+    cleaned = cleanClipper(testData, 0.1)
+    logging.warning(repr(cleaned))
+    check = np.array_equal(cleaned, expectedClippedData)
+    assert check == True

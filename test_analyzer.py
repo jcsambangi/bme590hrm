@@ -3,6 +3,7 @@
 
 import pytest
 import numpy as np
+import logging
 
 
 @pytest.fixture
@@ -28,6 +29,7 @@ def test_produceNumpy(testNumpy):
     if testNumpy[0, 0] == 0 and testNumpy[0, 1] == 1 and testNumpy[0, 2] == 2 and testNumpy[1, 0] == 100 and testNumpy[1, 1] == 50 and testNumpy[1, 2] == 40: checker = True
     assert checker == True
 
+
 def test_produceDuration(testNumpy):
     """Tests produceDuration function from analyzer.py
 
@@ -46,3 +48,48 @@ def test_produceVoltageExtremes(testNumpy):
     """
     from analyzer import produceVoltageExtremes
     assert produceVoltageExtremes(testNumpy) == (40, 100)
+
+
+def test_produceBeats(testData):
+    """Tests produceBeats from analyzer.py
+
+    :param testData: numpy array fixture
+    :returns: passes if beats are found
+    """
+    from analyzer import produceBeats
+    check = np.array_equal(produceBeats(testData), np.array([3, 7]))
+    assert check == True
+
+def test_produceNumBeats(testData):
+    """Tests produceNumBeats from analyzer.py
+
+    :param testData: numpy array fixture
+    :returns: passes if number of beats are correct
+    """
+    from analyzer import produceBeats
+    from analyzer import produceNumBeats
+    assert produceNumBeats(produceBeats(testData)) == 2
+
+
+def test_produceTimesOfBeats(testData):
+    """Tests produceTimesOfBeats from analyzer.py
+
+    :param testData: numpy array fixture
+    :returns: passes if times of beats are correct
+    """
+    from analyzer import produceBeats
+    from analyzer import produceTimesOfBeats
+    check = np.array_equal(produceTimesOfBeats(testData, produceBeats(testData)), np.array([3.5, 7.5]))
+    assert check == True
+
+def test_produceMeanHR(testData):
+    """Tests produceMeanHR from analyzer.py
+
+    :param testData: numpy array fixture
+    :returns: passes if mean heartrate in bpm is correct
+    """
+    from analyzer import produceBeats
+    from analyzer import produceNumBeats
+    from analyzer import produceDuration
+    from analyzer import produceMeanHR
+    assert produceMeanHR(produceNumBeats(produceBeats(testData)), produceDuration(testData)) == 12
