@@ -9,8 +9,8 @@ import cleaner
 import numpy as np
 import outputter
 
-filename = "test_data3.csv"
-numberOfMinutes = None
+filename = "test_data1.csv"  # input file, default: "test_data1.csv"
+numberOfMinutes = None  # duration to analyze (minutes), default: None
 
 
 def HRM(filename, numberOfMinutes):
