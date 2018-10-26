@@ -20,8 +20,8 @@ def HRM(filename, numberOfMinutes):
     """
     FORMAT = '%(asctime)s %(message)s'
     DATEFMT = '%Y-%m-%d %H:%M:%S'
-    logging.basicConfig(filename="log.txt", level=logging.DEBUG, 
-            format=FORMAT, datefmt=DATEFMT)
+    logging.basicConfig(filename="log.txt", level=logging.DEBUG,
+                        format=FORMAT, datefmt=DATEFMT)
     logging.info('Started.')
     reader.validate(filename)
     logging.info('Input file name: {}'.format(filename))

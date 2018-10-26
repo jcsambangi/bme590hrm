@@ -11,7 +11,7 @@ def cleanFloat(something):
     """
     try:
         floatSomething = float(something)
-        if math.isnan(floatSomething) == True or type(something) == bool:
+        if math.isnan(floatSomething) is True or type(something) == bool:
             raise ValueError
     except ValueError:
         logging.warning("Not a float: " + repr(something))
@@ -82,11 +82,12 @@ def cleanClipper(data, endTime):
     times = data[0, :]
     try:
         endTime = float(endTime)
-        if math.isnan(endTime) == True or type(endTime) == bool or endTime == None or endTime == 0 or endTime > np.amax(times):
+        if (math.isnan(endTime) is True or type(endTime) == bool or 
+            endTime == None or endTime == 0 or endTime > np.amax(times)):
             logging.info("User entered inappropriate time: "+repr(endTime))
             raise ValueError
     except (TypeError, ValueError):
-        return data 
+        return data
     endTime = endTime*60
     voltages = data[1, :]
     indRetain = []

@@ -13,11 +13,15 @@ testSomethings = [
         (True, "interpolate", "interpolate", "interpolate"),
 ]
 testInterpolate = [
-        ([[0, 1, "interpolate", 3], [50, 65, 75, 88]], 0, [[0, 1, 2, 3], [50, 65, 75, 88]]),
+        ([[0, 1, "interpolate", 3], [50, 65, 75, 88]], 0,
+            [[0, 1, 2, 3], [50, 65, 75, 88]]),
         ([[1, 2, 3], ["interpolate", 65, 75]], 1, [[2, 3], [65, 75]]),
-        ([[0, 1, 3, "interpolate"], [50, 65, 75, 88]], 0, [[0, 1, 3], [50, 65, 75]]),
-        ([[0, 1, "interpolate", "interpolate", 4], [50, 65, 75, 88, 90]], 0, [[0, 1, 2, 3, 4], [50, 65, 75, 88, 90]]),
+        ([[0, 1, 3, "interpolate"], [50, 65, 75, 88]], 0,
+            [[0, 1, 3], [50, 65, 75]]),
+        ([[0, 1, "interpolate", "interpolate", 4], [50, 65, 75, 88, 90]], 0,
+            [[0, 1, 2, 3, 4], [50, 65, 75, 88, 90]]),
 ]
+
 
 @pytest.mark.parametrize("something, eFloat, eTime, eVoltage", testSomethings)
 def test_cleanFloat(something, eFloat, eTime, eVoltage):
@@ -49,7 +53,7 @@ def test_cleanVoltage(something, eFloat, eTime, eVoltage):
     assert cleanVoltage(something) == eVoltage
 
 
-@pytest.mark.parametrize("rawData, which, expected",testInterpolate)
+@pytest.mark.parametrize("rawData, which, expected", testInterpolate)
 def test_cleanInterpolate(rawData, which, expected):
     """Tests the cleanInterpolate function from cleaner.py
 
@@ -72,4 +76,4 @@ def test_cleanClipper(testData):
     cleaned = cleanClipper(testData, 0.1)
     logging.warning(repr(cleaned))
     check = np.array_equal(cleaned, expectedClippedData)
-    assert check == True
+    assert check is True

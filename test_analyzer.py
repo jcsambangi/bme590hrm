@@ -26,8 +26,11 @@ def test_produceNumpy(testNumpy):
     :returns: passes if array was produced as expected, fails otherwise
     """
     checker = False
-    if testNumpy[0, 0] == 0 and testNumpy[0, 1] == 1 and testNumpy[0, 2] == 2 and testNumpy[1, 0] == 100 and testNumpy[1, 1] == 50 and testNumpy[1, 2] == 40: checker = True
-    assert checker == True
+    if (testNumpy[0, 0] == 0 and testNumpy[0, 1] == 1 and testNumpy[0, 2] == 2
+        and testNumpy[1, 0] == 100 and testNumpy[1, 1] == 50 and
+        testNumpy[1, 2] == 40):
+        checker = True
+    assert checker is True
 
 
 def test_produceDuration(testNumpy):
@@ -58,7 +61,8 @@ def test_produceBeats(testData):
     """
     from analyzer import produceBeats
     check = np.array_equal(produceBeats(testData), np.array([3, 7]))
-    assert check == True
+    assert check is True
+
 
 def test_produceNumBeats(testData):
     """Tests produceNumBeats from analyzer.py
@@ -79,8 +83,10 @@ def test_produceTimesOfBeats(testData):
     """
     from analyzer import produceBeats
     from analyzer import produceTimesOfBeats
-    check = np.array_equal(produceTimesOfBeats(testData, produceBeats(testData)), np.array([3.5, 7.5]))
-    assert check == True
+    check = np.array_equal(produceTimesOfBeats(testData, produceBeats(testData)),
+                                                np.array([3.5, 7.5]))
+    assert check is True
+
 
 def test_produceMeanHR(testData):
     """Tests produceMeanHR from analyzer.py
@@ -92,4 +98,5 @@ def test_produceMeanHR(testData):
     from analyzer import produceNumBeats
     from analyzer import produceDuration
     from analyzer import produceMeanHR
-    assert produceMeanHR(produceNumBeats(produceBeats(testData)), produceDuration(testData)) == 12
+    assert produceMeanHR(produceNumBeats(produceBeats(testData)),
+                            produceDuration(testData)) == 12

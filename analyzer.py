@@ -21,7 +21,7 @@ def produceDuration(data):
     :param data: numpy array with data
     :returns: float duration of signal
     """
-    return data[0, :].max()-data[0, :].min() 
+    return data[0, :].max()-data[0, :].min()
 
 
 def produceVoltageExtremes(data):
