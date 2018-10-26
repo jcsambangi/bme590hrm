@@ -80,7 +80,8 @@ def cleanClipper(data, endTime):
     :returns: numpy array of appropriately windowed data
     """
     times = data[0, :]
-    if endTime is None: return data
+    if endTime is None:
+        return data
     try:
         endTime = float(endTime)
         if (math.isnan(endTime) is True or type(endTime) == bool or

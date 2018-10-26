@@ -28,7 +28,7 @@ def test_produceNumpy(testNumpy):
     checker = False
     if (testNumpy[0, 0] == 0 and testNumpy[0, 1] == 1 and
             testNumpy[0, 2] == 2 and testNumpy[1, 0] == 100 and
-                testNumpy[1, 1] == 50 and testNumpy[1, 2] == 40):
+            testNumpy[1, 1] == 50 and testNumpy[1, 2] == 40):
         checker = True
     assert checker is True
 
@@ -84,7 +84,7 @@ def test_produceTimesOfBeats(testData):
     from analyzer import produceBeats
     from analyzer import produceTimesOfBeats
     check = np.array_equal(produceTimesOfBeats(testData,
-        produceBeats(testData)), np.array([3.5, 7.5]))
+                            produceBeats(testData)), np.array([3.5, 7.5]))
     assert check is True
 
 
@@ -99,4 +99,4 @@ def test_produceMeanHR(testData):
     from analyzer import produceDuration
     from analyzer import produceMeanHR
     assert produceMeanHR(produceNumBeats(produceBeats(testData)),
-        produceDuration(testData)) == 12
+                                            produceDuration(testData)) == 12
